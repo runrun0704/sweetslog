@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+root 'home#top'
+
   #post
   get "index" => "post#index"
   get "new" => "post#new"
@@ -11,7 +14,6 @@ Rails.application.routes.draw do
   post "post/:id/destroy" => "post#destroy"
 
   #home
-  get 'home/top'
   get "about" => "home#about"
   
   #user
