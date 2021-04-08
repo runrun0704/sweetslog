@@ -1,0 +1,16 @@
+current directory: /Users/fujiwarasatoru/sweets_log.3/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.3/ext/bootsnap
+/Users/fujiwarasatoru/.rbenv/versions/2.6.5/bin/ruby -I /Users/fujiwarasatoru/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210408-23977-1htlis4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/fujiwarasatoru/sweets_log.3/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/fujiwarasatoru/sweets_log.3/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: dylib (/Users/fujiwarasatoru/.rbenv/versions/2.6.5/lib/libruby.2.6.dylib) was built for newer macOS version (11.0) than being linked (10.15.6)
+
+current directory: /Users/fujiwarasatoru/sweets_log.3/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210408-23977-oet47j/bootsnap
