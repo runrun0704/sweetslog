@@ -1,0 +1,74 @@
+<div class="user-show j">
+    <div class="container">
+        <div class="user-show-header">
+            <div class="user-info">
+                <img src="<%= "/user_image/#{@user.image_name}" %>">
+                <h1><%= @user.name %></h1>
+            </div>  
+
+            <div class="user-edit-btn">
+                <% if @current_user.id == @user.id %>
+                    <%= link_to("編集","/user/#{@user.id}/edit") %>
+                    <%= link_to("ログアウト","/logout",{method: :post})%>   
+                <% end %> 
+            </div>  
+        </div>
+
+        <ul class="user-tabs">
+            <li class="active"><%= link_to("投稿一覧", "/user/#{@user.id}/show") %></li>
+            <li><%= link_to("いいね一覧", "/user/#{@user.id}/likes") %></li>
+        </ul>
+
+        <div class="posts-index user-posts-index">
+            <% @posts.each do|post| %>
+                <div class="post-micro">
+                    <div class="micro-top">
+                        <div class="micro-left">
+                            <% if post.image.attached? %>
+                                <%= image_tag post.image, class:'micro-sized'  %>
+                            <% end %>    
+                        </div>
+                        <div class="micro-right">
+                            <div class="micro-content">
+                                <div class="micro-title">
+                                    <%= link_to(post.title,"/post/#{post.id}/show") %>
+                                </div> 
+                                <div class="micro-contents">   
+                                    <%= truncate(post.content_1, length:20) %><br>
+                                    <%= truncate(post.content_2, length:20) %>
+                                </div>
+                            </div>
+                            <div class="like-btn">
+                                <% if Like.find_by(user_id:@current_user.id, post_id:params[:id]) %>
+                                    <%= link_to("/like/#{post.id}/destroy", method: :post) do %>
+                                        <span class="fa fa-heart like-btn-unlike"></span>
+                                    <% end %>
+                                <%else %>
+                                    <%= link_to("/like/#{post.id}/create", method: :post) do %>
+                                        <span class="fa fa-heart like-btn"></span>
+                                    <% end %>
+                                <%end%>
+                                <%= Like.where(post_id:post.id).count %><br>
+                            </div> 
+                            <div class="post-date">
+                                <%= post.created_at %>
+                            </div>   
+                        </div> 
+                    </div>
+
+                    <div class="micro-bottom">      
+                        <div class="post-user-info">
+                            <% if post.user_id %>
+                                <% user = User.find_by(id:post.user_id)%>
+                                <%if user.image_name %>
+                                 <img src="<%= "/user_image/#{user.image_name}"%>" class="micro-user-img">
+                                <% end %>
+                                <%= link_to(user.name,"/user/#{user.id}/show") %>
+                            <% end %>
+                        </div>
+                    </div>    
+                </div>      
+            <% end %>
+        </div>
+    </div>
+</div>    

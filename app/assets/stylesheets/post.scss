@@ -1,0 +1,301 @@
+// Place all the styles related to the post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* いいねボタン */
+.like-btn {
+    color: #8899a6;
+  }
+  
+  .like-btn-unlike {
+    color: #ff2581;
+  }
+  
+  .posts-show-item .fa {
+    font-size: 16px;
+    margin-right: 3px;
+  }
+  .sized{
+    width: 25%;
+    height:25%;
+    float:left;
+  }
+  .micro-sized{
+    width: 200px;
+    height: 200px;
+  }
+
+/* 検索フォーム */
+.post-index-search-1{
+  min-height: 50px;
+  max-height:80px;
+  border-bottom:1px solid rgb(73, 73, 73);
+  .sfa{
+    margin-bottom: 20px;
+  }
+  .sfa-ttl{
+    
+    h2{
+      float: left;
+      font-size:30px;
+      font-family: serif;
+      padding-left:40px;
+    }
+    span{
+      float:right;
+      font-size:30px;
+      font-family: serif;
+      padding-left:40px;
+    }
+
+  }
+  .sfa:hover{
+    cursor:pointer;
+  }
+  .sfc{
+    display: none;
+  }
+}
+.post-search{
+  .page-ttl{
+    border-bottom: 1px solid gray;
+  }
+  p{
+    text-align: left;
+
+  }
+  .post-index-search-2{
+    margin-top:20px;
+  }
+
+}
+
+/* 投稿一覧 */
+.posts-index{
+  margin-top: 50px;
+}
+.post-index-top{
+  text-align: left;
+  margin-top: 74px ;
+  border-bottom: 1px solid gray;
+  p{
+    text-align: left;
+  }
+  }
+  .post-index-top h2{
+    font-family: serif;
+  }
+  .post-index-title{
+    color:black;
+  }
+  .post-index-introduction{
+
+  }
+.post-index-search{
+  margin:50px 0;
+}  
+.posts-index{
+}
+.post-micro{
+  height:300px;
+  border:3px solid gray;
+  border-radius:30px;
+  margin:20px;
+  background-color:rgb(241, 240, 240);
+}
+.micro-top{
+  height:250px;
+  display: flex;
+  border-bottom:2px dotted black ;
+}
+.micro-left{
+  position:relative;
+  top:20px;
+  left:20px;
+  flex-grow:1;
+}
+.micro-right{
+  flex-grow:2;
+  position: relative;
+  top:20px;
+}
+.micro-content{
+  height:180px;
+  padding-right:20px ;
+}
+.micro-title a{
+  color:black;
+  font-size:30px;
+  font-family: serif;
+}
+.micro-title a:hover{
+  color:rgb(206, 205, 205);
+}
+.micro-contents{
+  font-family: serif;
+  padding:0 15px;
+}
+
+.like-btn{
+  float:left;
+  margin:5px;
+}
+.post-date{
+  margin:5px;
+}
+.post-edit{
+  margin-top: 74px ;
+}
+.post-index-search{
+  margin-top:74px;
+}
+.micro-user-img{
+  height:40px;
+  width:40px;
+  border-radius: 40px;
+  margin:3px 0 0 10px;
+}
+/* 投稿詳細 */
+.show-head{
+  border-bottom:2px solid gray ;
+  height: 70px;
+}
+.show-title{
+  padding:20px;
+  float:left;
+  h2{
+    font-family: serif;
+  }
+}
+.show-right{
+  float: right;;
+}
+
+.show-images{
+  margin:15px;
+  img{
+    border-radius: 30px;
+    max-height:600px;
+    max-width:80%;
+    margin-bottom:15px ;
+  }
+}
+.show-contents{
+  .content{
+    padding-top:20px;
+    .content-ttl{
+      text-align: left;
+      font-size: 25px;
+      border-bottom:1px solid gray ;
+    }
+    .con-con{
+      width: 75%;
+      font-family: serif;
+    }
+  }
+
+}
+
+.post-user-info-macro{
+  margin:15px 0;
+  padding-top:10px;
+  border-top:1px dotted gray;
+  .puim-ttl{
+    text-align: left;
+    font-size: 20px;
+  }
+  .puim-top{
+    padding-left:10px;
+    img{
+      width:50px;
+      height:50px;
+      border-radius: 50px;
+    }
+    a{
+      color:black;
+      font-size:15px;
+    }
+  }
+  .puim-bottom{
+    padding-left: 15px;
+    .puim-post-count{
+      float: left;
+      p{
+        float: left;
+      }
+    }  
+    .puim-like-count{
+      p{
+        float: left;
+      }
+    }  
+  }
+}
+
+/* 新規投稿 */
+.post-new{
+  .form-heading{
+    border-bottom: 1px solid gray;
+    h2 p{
+      font-family: serif;
+    }
+    p{
+      text-align:left;
+    }
+  }
+  .form-main{
+    h3{
+      padding-top:20px;
+    }
+    .form-ttl{
+      width:300px;
+    }
+    .form-content{
+      width:500px;
+      height:70px;
+    }
+    .form-submit{
+      background-color: rgb(197, 196, 196);
+      opacity:0.7;
+      padding:10px 40px;
+      margin-top: 80px ;
+      float: right;
+    }
+    .form-submit:hover{
+      opacity:1.0;
+    }
+  }
+
+}
+
+/* 投稿編集 */
+.post-edit{
+  .form-heading{
+    border-bottom: 1px solid gray;
+    margin-bottom:15px;
+    h2,p{
+      text-align: left;
+    }
+  }
+  .form-main{
+    h3{
+      padding-top:20px;
+    }
+    .form-ttl{
+      width:300px;
+    }
+    .form-content{
+      width:500px;
+      height:70px;
+    }
+    .form-submit{
+      background-color: rgb(197, 196, 196);
+      opacity:0.7;
+      padding:10px 40px;
+      margin-top: 80px ;
+      float: right;
+    }
+    .form-submit:hover{
+      opacity:1.0;
+    }
+  }
+}

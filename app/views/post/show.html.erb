@@ -1,0 +1,71 @@
+<div class="post-show j">
+    <div class="container">
+
+        <div class="show-head">
+            <div class="show-title">
+                <h2><%= @post.title %></h2>
+            </div>
+
+            <div class="show-right">
+                <% if @current_user.id == @user.id %>
+                    <div class="show-user-info">
+                            <%= link_to("編集","/post/#{@post.id}/edit")%>
+                            <%= link_to("削除","/post/#{@post.id}/destroy", {method: :post}) %>
+                    </div>
+                <% else %>    
+                    <div class="like-btn">
+                        <% if Like.find_by(user_id:@current_user.id, post_id:params[:id]) %>
+                            <%= link_to("/like/#{@post.id}/destroy", method: :post) do %>
+                                <span class="fa fa-heart like-btn-unlike"></span>
+                            <% end %>
+                        <%else %>
+                            <%= link_to("/like/#{@post.id}/create", method: :post) do %>
+                                <span class="fa fa-heart like-btn"></span>
+                            <% end %>
+                        <%end%>
+                        <%= Like.where(post_id:@post.id).count %>
+                    </div>
+                <% end %>
+            </div>
+        </div>    
+
+        <div class="show-images"> 
+           <div class="post-image">
+                <% if @post.image.attached? %>
+                    <%= image_tag @post.image %>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="show-contents">
+            <div class="content">
+                <p class="content-ttl">スイーツの説明と感想</p>
+                <span class="con-con"><%= @post.content_1 %></span>     
+            </div>
+            <div class="content">
+                <p class="content-ttl">お店の情報</p>
+                <span class="con-con"><%= @post.content_2 %></span>
+            </div>
+        </div>
+
+        <div class="post-user-info-macro">
+            <p class="puim-ttl">投稿者</p>
+            <div class="puim-top">
+                <% user = User.find_by(id:@post.user_id)%>
+                <img src="<%= "/user_image/#{user.image_name}" %>" class="macro-user-img">
+                <%= link_to(user.name,"/user/#{user.id}/show") %>
+            </div>
+            <div class="puim-bottom">
+                <div class="puim-post-count"> 
+                    <p>投稿数：</p>
+                    <%= Post.where(user_id:@user.id).count %>
+                </div>
+                <div class="puim-like-count">
+                    <p>いいね数：</p>
+                    <%= Like.where(user_id:@user.id).count %>
+                </div>
+            </div>    
+        </div>
+
+    </div>
+</div>    

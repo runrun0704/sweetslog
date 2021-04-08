@@ -1,0 +1,31 @@
+<div class="post-edit j">
+    <div class="container">
+        <! 編集ページのヘッダー >
+        <div class="form-heading">
+            <h2>編集</h2>
+            <p>edit</p>
+        </div>
+
+        <div class="form-main">
+            <%= form_with model: @post, url:"/post/#{@post.id}/update", method: :post, local: true  do |form| %>
+                <h3>タイトル</h3>
+                <%= form.text_area :title , value:@post.title ,class:'form-ttl form' %>
+
+                <! 画像のプレビュー >
+                <h3>画像を載せる</h3>
+                <div class="field">
+                    <img src="" id="tl_img" class="img_preview" style="max-width:80%;max-height:600px;" />
+                </div>
+                <%= form.file_field :image, id:'edit_image' %>
+
+                <h3>スイーツの説明と感想</h3>
+                <%= form.text_area :content_1, value:@post.content_1  ,class:'form-content form' %><br>
+
+                <h3>お店の情報</h3>
+                <%= form.text_area :content_2, value:@post.content_2 ,class:'form-content form' %><br>
+                
+                <span class="form-submit"><%= form.submit value:"保存"%></span>
+            <% end %>
+        </div>    
+    </div>
+</div>        

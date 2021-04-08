@@ -1,0 +1,85 @@
+<div class="post-index">
+    <div class="container">
+
+        <! 投稿一覧の説明等 >
+        <div class="post-index-top">
+            <h2 class="post-index-title">
+             投稿一覧
+            </h2>
+            <p class="post-index-introduction">post index</p>
+        </div>
+
+        <! 投稿の検索フォーム >
+        <div class="post-index-search-1 search-form">
+            <ul>
+                <li class="sfa">
+                    <div class="sfa-ttl">
+                        <h2>検索</h2>
+                        <span class="sfa_span">+</span>
+                    </div>      
+                    <div class="sfc">
+                        <p class="post-search-introduction">
+                            気になるキーワードを入力してみよう！
+                        </p>
+                        <%= form_tag("/post/search",method: :get) do %>
+                            <%= text_field_tag :search %>
+                            <%= submit_tag 'Search' %>
+                        <% end %>
+                    </div>  
+                </li> 
+            </ul>     
+        </div>
+
+        <! 投稿の一覧（新着順とランキングの切り替え） >
+        <div class="posts-index">
+            <% @posts.each do|post| %>
+                <div class="post-micro">
+                    <div class="micro-top">
+                        <div class="micro-left">
+                            <% if post.image.attached? %>
+                                <%= image_tag post.image, class:'micro-sized'  %>
+                            <% end %>    
+                        </div>
+                        <div class="micro-right">
+                            <div class="micro-content">
+                                <div class="micro-title">
+                                    <%= link_to(post.title,"/post/#{post.id}/show") %>
+                                </div> 
+                                <div class="micro-contents">   
+                                    <%= truncate(post.content_1, length:20) %>
+                                    <%= truncate(post.content_2, length:20) %>
+                                </div>
+                            </div>
+                            <div class="like-btn">
+                                <% if Like.find_by(user_id:@current_user.id, post_id:params[:id]) %>
+                                    <%= link_to("/like/#{post.id}/destroy", method: :post) do %>
+                                        <span class="fa fa-heart like-btn-unlike"></span>
+                                    <% end %>
+                                <%else %>
+                                    <%= link_to("/like/#{post.id}/create", method: :post) do %>
+                                        <span class="fa fa-heart like-btn"></span>
+                                    <% end %>
+                                <%end%>
+                                <%= Like.where(post_id:post.id).count %><br>
+                            </div> 
+                            <div class="post-date">
+                                <%= post.created_at %>
+                            </div>   
+                        </div> 
+                    </div>
+
+                    <div class="micro-bottom">      
+                        <div class="post-user-info-micro">
+                            <% if post.user_id %>
+                                <% user = User.find_by(id:post.user_id)%>
+                                <img src="<%= "/user_image/#{user.image_name}" %> " class="micro-user-img">
+                                <%= link_to(user.name,"/user/#{user.id}/show") %>
+                            <% end %>
+                        </div>
+                    </div>    
+                </div>      
+            <% end %>
+        </div>
+
+    </div>    
+</div>

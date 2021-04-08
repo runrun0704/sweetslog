@@ -1,0 +1,150 @@
+// Place all the styles related to the user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_form{
+  margin-top: 74px;
+}  
+.sized{
+  width: 25%;
+  height:25%;
+  float:left;
+}
+
+
+/* ユーザー詳細 */
+.user-show{
+  .user-show-header{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    .user-info{
+      margin:10px 0 10px 40px;
+      height: 70px;
+      img{
+        width:70px;
+        height: 70px;
+        border-radius: 70px;
+        float: left;
+      }
+      h1{
+        font-family: serif;
+        padding-top:10px;
+      }
+    }  
+    .user-edit-btn{
+      text-align: right;
+      padding:30px 0;
+      a{
+        color:black;
+        font-family: serif;
+      }
+    }
+  } 
+  .user-tabs{
+    margin:15px 15px;
+    padding-bottom: 15px;
+    a{
+      float: left;
+      font-family: serif;
+      color:black;
+      border: 1px solid gray;
+      padding:5px 10px;
+    }   
+  }
+  .user-posts-index{
+  } 
+}
+
+/* ログインフォーム */
+.login_form{
+  .form-heading{
+    border-bottom: 1px solid gray;
+    margin-bottom:15px;
+    h2 p{
+      font-family: serif;
+    }
+    p{
+      text-align: left;
+    }
+  }
+  .user_form{
+    margin:0 100px;
+    width:60%;
+    height: 260px;
+    background-color: #f5f8fa;
+    box-shadow: 0 2px 6px #c1ced7;
+    h4{
+      font-family: serif;
+      padding-left:200px;
+    }
+    .user_login_form{
+      text-align: center;
+      margin-bottom: 20px;
+      
+      input{
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        width:30%;
+      }  
+    }
+    .form-submit{
+      background-color: rgb(197, 196, 196);
+      opacity:0.7;
+      padding:10px 40px;
+      margin-top: 30px ;
+      margin-right: 10px;
+      float: right;
+    }
+    .form-submit:hover{
+      opacity:1.0;
+    }
+  }
+}
+
+/* 新規登録 */
+.signup_form{
+  .form-heading{
+    border-bottom: 1px solid gray;
+    margin-bottom:15px;
+    h2 p{
+      font-family: serif;
+    }
+    p{
+      text-align: left;
+    }
+  }
+  .user_form{
+    margin:0 100px;
+    width:60%;
+    height: 260px;
+    background-color: #f5f8fa;
+    box-shadow: 0 2px 6px #c1ced7;
+    h4{
+      font-family: serif;
+      padding-left:200px;
+    }
+    .user_new_form{
+      text-align: center;
+      margin-bottom: 20px;
+      
+      input{
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        width:30%;
+      }  
+    }
+    .form-submit{
+      background-color: rgb(197, 196, 196);
+      opacity:0.7;
+      padding:10px 40px;
+      margin-top: 30px ;
+      margin-right: 10px;
+      float: right;
+    }
+    .form-submit:hover{
+      opacity:1.0;
+    }
+  }
+}
