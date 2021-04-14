@@ -1,5 +1,31 @@
 <div class="user-show j">
     <div class="container">
+        <div class="modal-wrapper" id="modal-show">
+            <div class="modal">
+                <div>
+                    <i class="fa fa-2x fa-times" id="modal-close"></i>
+                </div>
+                <div class="modal-1p">
+                    <ul>
+                        <li>・画像を変更</li>
+                        <li>・名前の変更</li>
+                        <li>・パスワードの変更</li>
+                    </ul>
+                </div>
+
+                <div class="modal-2p">
+                    <p>パスワードを入力してくだい</p>
+                </div>
+
+                <div class="madol-3p">
+                    <p>新しい画像を入力してください</p>
+                    <p>新しい名前を入力してください<p>
+                    <p>新しいパスワードを入力してください</p>
+                </div>
+
+            </div>
+        </div>
+
         <div class="user-show-header">
             <div class="user-info">
                 <img src="<%= "/user_image/#{@user.image_name}" %>">
@@ -8,11 +34,13 @@
 
             <div class="user-edit-btn">
                 <% if @current_user.id == @user.id %>
-                    <%= link_to("編集","/user/#{@user.id}/edit") %>
+                    <div class="modal-open btn"><p>編集</p></div>
                     <%= link_to("ログアウト","/logout",{method: :post})%>   
                 <% end %> 
             </div>  
         </div>
+
+
 
         <ul class="user-tabs">
             <li class="active"><%= link_to("投稿一覧", "/user/#{@user.id}/show") %></li>

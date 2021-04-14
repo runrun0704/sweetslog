@@ -14,6 +14,7 @@ root 'home#top'
   post "post/:id/destroy" => "post#destroy"
 
   #home
+  get 'home/top'
   get "about" => "home#about"
   
   #user

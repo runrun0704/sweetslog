@@ -43,7 +43,7 @@
                         <div class="micro-right">
                             <div class="micro-content">
                                 <div class="micro-title">
-                                    <%= link_to(post.title,"/post/#{post.id}/show") %>
+                                    <%= link_to(post.title,"/post/#{post.id}/show",data: {"turbolinks" => false}) %>
                                 </div> 
                                 <div class="micro-contents">   
                                     <%= truncate(post.content_1, length:20) %>
@@ -52,11 +52,11 @@
                             </div>
                             <div class="like-btn">
                                 <% if Like.find_by(user_id:@current_user.id, post_id:params[:id]) %>
-                                    <%= link_to("/like/#{post.id}/destroy", method: :post) do %>
+                                    <%= link_to("/like/#{post.id}/destroy", method: :post, data: {"turbolinks" => false}) do %>
                                         <span class="fa fa-heart like-btn-unlike"></span>
                                     <% end %>
                                 <%else %>
-                                    <%= link_to("/like/#{post.id}/create", method: :post) do %>
+                                    <%= link_to("/like/#{post.id}/create", method: :post,data: {"turbolinks" => false}) do %>
                                         <span class="fa fa-heart like-btn"></span>
                                     <% end %>
                                 <%end%>
@@ -73,7 +73,7 @@
                             <% if post.user_id %>
                                 <% user = User.find_by(id:post.user_id)%>
                                 <img src="<%= "/user_image/#{user.image_name}" %> " class="micro-user-img">
-                                <%= link_to(user.name,"/user/#{user.id}/show") %>
+                                <%= link_to(user.name,"/user/#{user.id}/show",data: {"turbolinks" => false})  %>
                             <% end %>
                         </div>
                     </div>    

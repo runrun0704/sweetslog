@@ -159,6 +159,7 @@ header {
     position: relative;;
     background-color: #f6f7fb;
     top:600px;
+    margin-bottom:30px;
   }
   .top-heading h2,p{
     font-family: serif;
@@ -235,3 +236,10 @@ header {
     line-height: 26px;
     transition: color 0.3s;
   }
+  
+.card-img{
+  img{
+    width:250px;
+    height:200px;
+  }
+}  

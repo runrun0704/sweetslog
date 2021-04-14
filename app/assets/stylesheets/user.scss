@@ -12,6 +12,26 @@
 }
 
 
+/* モーダル */
+.modal-wrapper{
+  .modal{
+    display:none;
+    height:120px;
+    width:180px;
+    background-color: blanchedalmond;
+    .modal-1p{
+      display: inline-block;
+    }
+    .modal-2p{
+      display: none;
+    }
+    .modal-3p{
+      display:none;
+    }
+  }
+
+  
+}
 /* ユーザー詳細 */
 .user-show{
   .user-show-header{
@@ -127,7 +147,7 @@
     .user_new_form{
       text-align: center;
       margin-bottom: 20px;
-      
+
       input{
         border-top: none;
         border-right: none;

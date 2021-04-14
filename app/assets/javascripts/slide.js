@@ -1,4 +1,4 @@
-$(function(){
+document.addEventListener("turbolinks:load",function(){
   var page=0;
 
 //（２）イメージの数を最後のページ数として変数化
@@ -39,4 +39,4 @@ startTimer();
 
 /*オプションを足す場合はここへ記載*/
 
-})
+});
