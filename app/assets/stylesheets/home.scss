@@ -243,3 +243,18 @@ header {
     height:200px;
   }
 }  
+/* about部分 */
+.sweets-about{
+  .about-ttl{
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+    h2{
+      font-family: serif;
+      text-align: left;
+    }
+    p{
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+}
