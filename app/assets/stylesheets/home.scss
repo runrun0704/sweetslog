@@ -247,7 +247,6 @@ header {
 .sweets-about{
   .about-ttl{
     border-bottom: 1px solid gray;
-    margin-bottom: 10px;
     h2{
       font-family: serif;
       text-align: left;
@@ -257,4 +256,23 @@ header {
       padding-left: 20px;
     }
   }
+  .about-main{
+    background-color: rgb(250, 246, 246);
+    padding-top: 10px;
+    .about-txt_1{
+      padding-bottom:40px;
+      h4{
+        text-align: center;
+      }
+    }
+    .about-txt_2{
+      padding-bottom:40px;
+      h4{
+        text-align: center;
+      }
+    }
+  }  
+}
+.about-fadeIn{
+  display:none;
 }
