@@ -1,4 +1,5 @@
-$(document.addEventListener("turbolinks:load",function(){
+document.addEventListener("turbolinks:load"
+,function(){
     $('#edit_image').on('change', function (e) {
         var fileset = $(this).val();
         if (fileset === '') {
@@ -12,4 +13,4 @@ $(document.addEventListener("turbolinks:load",function(){
         }
     });
       
-}));    
+});    
