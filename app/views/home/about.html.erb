@@ -30,31 +30,40 @@
 
             <div class="about-use-wrapper">
                 <div class="about-use-ttl">
-                    <h3>使い方</h3>
+                    <h4>使い方</h4>
                 </div>
                 <div class="about-use-txt_1">
-                    <h3 class="about-use_ttl">
+                    <h4 class="about-use_ttl">
                         閲覧する
-                    </h3>
-                    <img class="about-use-img">
-                    <p>
-                        他のユーザーの投稿を観ることができます。
-                        それを参考に、豊かなスイーツライフを送ろう！
-                        （この機能は登録は不要であり、どなたでもご利用いただけます。）
-                    </p>
-                    <%= link_to("さっそく見てみる","/index") %>
+                    </h4>
+
+                    <div class="about-use-content">
+                        <img class="about-use-img" src="/css_image/sample.img_3.png">
+                        <p class="about-use-txt">
+                            他のユーザーの投稿を観ることができます。
+                            それを参考に、豊かなスイーツライフを送ろう！
+                            （この機能は登録は不要であり、どなたでもご利用いただけます。）
+                        </p>
+                        </div><%= link_to("さっそく見てみる","/index") %>
+                    
+
                 </div>
+
                 <div class="about-use-txt_2">
-                    <h3 class="about-use_ttl">
+                    <h4 class="about-use_ttl">
                         投稿する
-                    </h3>
-                    <img class="about-use-img">
-                    <p>
-                        自分のお気に入りのスイーツを投稿できます。
-                        世界にスイーツを届けよう！
-                        （この機能は登録が必要です。）
-                    </p>
-                    <%= link_to("さっそく投稿する","/user/new")%>
+                    </h4>
+
+                    <div class="about-use-content">
+                        <img class="about-use-img" src="/css_image/sample_2.png">
+                        <p class="about-use-txt">
+                            自分のお気に入りのスイーツを投稿できます。
+                            世界にスイーツを届けよう！
+                            （この機能は登録が必要です。）
+                        </p>
+                        </div><span><%= link_to("さっそく投稿する","/user/new")%></span>
+                    
+
                 </div>
             </div>
         </div>

@@ -271,6 +271,21 @@ header {
         text-align: center;
       }
     }
+    .about-use-wrapper{
+      .about-use-txt_1,.about-use-txt_2{
+        margin:20px;
+      }
+      .about-use-content{
+        display:flex;
+        .about-use-img{
+          height: 200px;
+          width: 300px;
+          border-radius: 20px;
+          box-shadow:5px 5px #f1f1f3;
+        }
+        
+      }
+    }
   }  
 }
 .about-fadeIn{
